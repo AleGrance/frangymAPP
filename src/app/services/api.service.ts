@@ -1,0 +1,20 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ApiService {
+  //public url: string = "http://localhost:3000"
+  public url: string = "https://contableag.site"
+  constructor(private http: HttpClient) { }
+
+  get(path: string) {
+    return this.http.get(this.url + '/' + path);
+  };
+
+  post(path: string, body: any) {
+    return this.http.post(this.url + '/' + path, body);
+  };
+
+}

@@ -1,0 +1,92 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Cliente</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-accordion-group>
+      <ion-accordion *ngFor="let item of clientes" value="{{item.id_cliente}}">
+        <ion-item slot="header" color="light">
+          <ion-icon class="{{item.estado_cliente}}" name="checkmark-circle" slot="start"></ion-icon>
+          <ion-label>{{item.ci_cliente}}</ion-label>
+          <ion-label>{{item.nombre_cliente}}</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>{{item.nombre_cliente}}</ion-card-title>
+              <ion-card-subtitle>CI: {{item.ci_cliente}}</ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+              <ion-label>Fecha de vencimiento: {{item.fecha_vencimiento}}</ion-label>
+            </ion-card-content>
+          
+            <ion-button fill="clear">Modificar</ion-button>
+            <ion-button fill="clear">Inactivo</ion-button>
+          </ion-card>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button id="open-modal">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Registrar cliente</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <ion-label position="stacked">Ingresar el nombre</ion-label>
+          <ion-input type="text" placeholder="Nombre del cliente" [(ngModel)]="nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Ingresar el numero de CI</ion-label>
+          <ion-input type="number" placeholder="CI del cliente" [(ngModel)]="ci"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Seleccionar el estado</ion-label>
+          <ion-select [(ngModel)]="status">
+            <ion-select-option value="Activo">Activo</ion-select-option>
+            <ion-select-option value="Inactivo">Inactivo</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Seleccionar el periodo</ion-label>
+          <ion-input type="date" [(ngModel)]="periodo"></ion-input>
+        </ion-item>
+      </ion-content>
+      <ion-footer>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancelar</ion-button>
+          </ion-buttons>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Enviar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-footer>
+    </ng-template>
+  </ion-modal>
+
+
+</ion-content>

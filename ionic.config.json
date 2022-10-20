@@ -1,0 +1,7 @@
+{
+  "name": "frangym",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
