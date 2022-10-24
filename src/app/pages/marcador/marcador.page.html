@@ -18,23 +18,35 @@
     <ion-grid [fixed]="true">
     
       <ion-row>
+        <ion-col size="10">
+          <ion-input type="text" id="input" placeholder="Ingrese su CI"></ion-input>
+        </ion-col>
+        <ion-col size="2">
+          <div class="ion-activatable ripple-parent rounded-rectangle ion-margin-top" (click)="borrar()">
+            Borrar
+            <ion-ripple-effect></ion-ripple-effect>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
         <ion-col>
           <ion-card>
-            <ion-card-header>
+            <ion-card-header (click)="onClick($event)">
               <ion-card-title>1</ion-card-title>
             </ion-card-header>
           </ion-card>
         </ion-col>
         <ion-col>
           <ion-card>
-            <ion-card-header>
+            <ion-card-header (click)="onClick($event)">
               <ion-card-title>2</ion-card-title>
             </ion-card-header>
           </ion-card>
         </ion-col>
         <ion-col>
           <ion-card>
-            <ion-card-header>
+            <ion-card-header (click)="onClick($event)">
               <ion-card-title>3</ion-card-title>
             </ion-card-header>
           </ion-card>
@@ -44,21 +56,21 @@
       <ion-row>
         <ion-col>
           <ion-card>
-            <ion-card-header>
+            <ion-card-header (click)="onClick($event)">
               <ion-card-title>4</ion-card-title>
             </ion-card-header>
           </ion-card>
         </ion-col>
         <ion-col>
           <ion-card>
-            <ion-card-header>
+            <ion-card-header (click)="onClick($event)">
               <ion-card-title>5</ion-card-title>
             </ion-card-header>
           </ion-card>
         </ion-col>
         <ion-col>
           <ion-card>
-            <ion-card-header>
+            <ion-card-header (click)="onClick($event)">
               <ion-card-title>6</ion-card-title>
             </ion-card-header>
           </ion-card>
@@ -68,21 +80,21 @@
       <ion-row>
         <ion-col>
           <ion-card>
-            <ion-card-header>
+            <ion-card-header (click)="onClick($event)">
               <ion-card-title>7</ion-card-title>
             </ion-card-header>
           </ion-card>
         </ion-col>
         <ion-col>
           <ion-card>
-            <ion-card-header>
+            <ion-card-header (click)="onClick($event)">
               <ion-card-title>8</ion-card-title>
             </ion-card-header>
           </ion-card>
         </ion-col>
         <ion-col>
           <ion-card>
-            <ion-card-header>
+            <ion-card-header (click)="onClick($event)">
               <ion-card-title>9</ion-card-title>
             </ion-card-header>
           </ion-card>
@@ -90,15 +102,21 @@
       </ion-row>
 
       <ion-row>
-        
         <ion-col size="4" offset="4">
           <ion-card>
-            <ion-card-header>
+            <ion-card-header (click)="onClick($event)">
               <ion-card-title>0</ion-card-title>
             </ion-card-header>
           </ion-card>
         </ion-col>
-        
+        <ion-col>
+          <ion-card color="success">
+            <ion-card-header (click)="enviar()">
+              <ion-card-title>Enviar</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+
       </ion-row>
 
     </ion-grid>
