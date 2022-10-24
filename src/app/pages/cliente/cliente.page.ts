@@ -51,12 +51,14 @@ export class ClientePage implements OnInit {
     }
 
     //console.log(clienteNuevo);
-
+    // Se carga el nuevo cliente
     this.api.post('cliente', clienteNuevo)
       .subscribe(result => {
+        // Si retorna el cliente registrado se muestra el mensaje 
         if (typeof result === 'object') {
           this.presentToast('top', 'Cliente registrado');
 
+          // Y se actualiza la lista
           this.api.get('cliente')
             .subscribe(data => {
               this.clientes = data;

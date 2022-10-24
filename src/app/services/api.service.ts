@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
-  //public url: string = "http://localhost:3000"
-  public url: string = "https://contableag.site"
+  public url: string = "http://localhost:3000"
+  //public url: string = "https://contableag.site"
   constructor(private http: HttpClient) { }
 
   get(path: string) {
