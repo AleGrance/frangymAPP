@@ -24,16 +24,27 @@ export class ClientePage implements OnInit {
   constructor(private api: ApiService, private toastController: ToastController) { }
 
   ngOnInit() {
-    this.api.get('cliente')
-      .subscribe(data => {
-        this.clientes = data;
-        //console.log(this.clientes);
-      })
+    // this.api.get('tasks')
+    //   .subscribe(data => {
+    //     this.clientes = data;
+    //     console.log(this.clientes);
+    //   })
+
+      // setInterval((): void => {
+      //   this.refrescarCadaSec();
+      // }, 2000);
 
     // Set the date
     const mes = this.fecha.getMonth() + 1;
     this.fechaRegistro = this.fecha.getFullYear() + "-" + mes + "-" + this.fecha.getDate();
 
+  }
+
+  refrescarCadaSec() {
+    this.api.get('tasks')
+      .subscribe(data => {
+        this.clientes = data;
+      })
   }
 
   cancel() {

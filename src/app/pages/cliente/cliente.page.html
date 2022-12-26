@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Cliente</ion-title>
+    <ion-title>Turnos</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,8 +13,31 @@
       <ion-title size="large">Cliente</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-button href="https://tableroturnos.web.app/turnos" fill="clear">Ir al sitio de los Turnos 2</ion-button>
+
+  <!-- Table -->
+  <!-- <table>
+    <caption>Turnos reservados las ultimas 24Hs.</caption>
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Nombre</th>
+        <th>Estado</th>
+        <th>Sanatorio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of clientes">
+        <td data-label="NIM">{{t.task_details}}</td>
+        <td data-label="Nama">{{t.task_name}}</td>
+        <td data-label="Jurusan">{{t.task_status}}</td>
+        <td data-label="Angkatan">Migone</td>
+      </tr>
+    </tbody>
+  </table> -->
 <!-- Hola -->
-  <div id="container">
+  <!-- <div id="container">
     <ion-accordion-group>
       <ion-accordion *ngFor="let item of clientes" value="{{item.id_cliente}}">
         <ion-item slot="header" color="light">
@@ -39,15 +62,15 @@
         </div>
       </ion-accordion>
     </ion-accordion-group>
-  </div>
+  </div> -->
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button id="open-modal">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
-  </ion-fab>
+  </ion-fab> -->
 
-  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+  <!-- <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
     <ng-template>
       <ion-header>
         <ion-toolbar>
@@ -86,7 +109,7 @@
         </ion-toolbar>
       </ion-footer>
     </ng-template>
-  </ion-modal>
+  </ion-modal> -->
 
 
 </ion-content>
